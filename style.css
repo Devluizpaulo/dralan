@@ -76,7 +76,7 @@ header.header-scrolled {
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 3vw, 2rem);
 }
 
 .nav-desktop {
@@ -211,7 +211,7 @@ header.header-scrolled {
 .hero-custom {
   background: var(--texto-primario);
   color: var(--branco);
-  padding: 5rem 0 4rem 0;
+  padding: clamp(3rem, 4vw, 5rem) 0 clamp(2.5rem, 3vw, 4rem) 0;
   position: relative;
   overflow: hidden;
   border-bottom: 4px solid var(--dourado);
@@ -235,7 +235,7 @@ header.header-scrolled {
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 3vw, 2rem);
   position: relative;
   z-index: 2;
   gap: 3rem;
@@ -250,7 +250,7 @@ header.header-scrolled {
 }
 
 .hero-title {
-  font-size: 2.25rem;
+  font-size: clamp(2rem, 1.8rem + 1.5vw, 3.1rem);
   font-weight: 800;
   line-height: 1.2;
   margin: 0;
@@ -290,11 +290,11 @@ header.header-scrolled {
 
 .hero-desc {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.55;
   margin: 0;
   opacity: 0.9;
   text-align: justify;
-  max-width: 52ch;
+  max-width: 60ch;
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -341,12 +341,12 @@ header.header-scrolled {
 .hero-logo-col {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .hero-logo-img {
-  width: clamp(220px, 28vw, 360px);
+  width: clamp(260px, 34vw, 520px);
   max-width: 100%;
   height: auto;
   border-radius: 16px;
@@ -410,7 +410,7 @@ section {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1160px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
@@ -642,25 +642,35 @@ h2::after, .areas h2::after, .sobre-title::after {
 .sobre-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 3vw, 2rem);
 }
 
 
 
 .sobre-latin {
-    font-size: 1rem;
+  font-size: 1rem;
   font-style: italic;
   color: var(--dourado);
   font-weight: 600;
-    text-align: center;
+  text-align: center;
   margin-bottom: 2rem;
   background: rgba(255, 179, 0, 0.08);
   padding: 0.75rem 1.5rem;
   border-radius: 12px;
   border-left: 4px solid var(--dourado);
-  max-width: 500px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+.sobre-latin [lang="la"] {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+.sobre-traducao {
+  display: inline-block;
+  margin-top: 4px;
+  font-style: normal;
+  color: var(--texto-terciario);
 }
 
 .sobre-content {
@@ -761,12 +771,12 @@ h2::after, .areas h2::after, .sobre-title::after {
 }
 
 .diferencial-item h4 {
-  font-size: 1.15rem;
+  font-size: 1.55rem;
   letter-spacing: 0.2px;
 }
 
 .latin-quote {
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-style: italic;
   color: var(--dourado);
   font-weight: 600;
@@ -792,7 +802,7 @@ h2::after, .areas h2::after, .sobre-title::after {
 }
 
 .sobre-img img {
-  width: 320px;
+  width: 230px;
   max-width: 100%;
   height: auto;
   border-radius: var(--borda-radius);
@@ -801,7 +811,7 @@ h2::after, .areas h2::after, .sobre-title::after {
 }
 
 .sobre-img img:hover {
-  transform: scale(1.05);
+  transform: scale(1.11);
 }
 
 /* ===== TESTIMONIALS SECTION ===== */
@@ -1657,4 +1667,16 @@ footer p {
 
 .sobre-section .diferencial-list-desc {
   font-size: 0.9rem;
+}
+
+@media (min-width: 1200px) {
+  .hero-logo-col {
+    margin-right: -24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-logo-col {
+    margin-right: -48px;
+  }
 }
